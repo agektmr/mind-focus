@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mind Focus</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@4.0.0/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@4.0.0/dist/material-components-web.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>  
+  <body>
+    <main>
+      <h1>Mind Focus</h1>
+      <div class="slider_container">
+        <i class="mdc-fab__icon material-icons">volume_down</i>
+        <div id="volume" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="99"
+         aria-label="Select Value">
+          <div class="mdc-slider__track-container">
+            <div class="mdc-slider__track"></div>
+          </div>
+          <div class="mdc-slider__thumb-container">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            <div class="mdc-slider__pin">
+              <span class="mdc-slider__pin-value-marker"></span>
+            </div>
+            <svg class="mdc-slider__thumb" width="21" height="21">
+              <circle cx="10.5" cy="10.5" r="7.875"></circle>
+            </svg>
+            <div class="mdc-slider__focus-ring"></div>
+          </div>
+        </div>
+        <i class="mdc-fab__icon material-icons">volume_up</i>        
+      </div>
+      <div id="select" class="mdc-select">
+        <div class="mdc-select__anchor">
+          <i class="mdc-select__dropdown-icon"></i>
+          <div class="mdc-select__selected-text"></div>
+          <span class="mdc-floating-label">Select noise</span>
+          <div class="mdc-line-ripple"></div>          
+        </div>
+        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list-box">
+          <ul class="mdc-list">
+            <li class="mdc-list-item mdc-list-item--selected" data-value="stereosignwave" aria-selected="true">Stereo Sign Wave</li>
+            <li class="mdc-list-item" data-value="whitenoise">White Noise</li>            
+          </ul>
+        </div>
+      </div>
+      <button id="toggle" class="mdc-button mdc-button--raised">
+        Start
+      </button>
+      <div id="freq" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+       aria-valuemin="144" aria-valuemax="148" aria-valuenow="146"
+       aria-label="Select Value">
+        <div class="mdc-slider__track-container">
+          <div class="mdc-slider__track"></div>
+        </div>
+        <div class="mdc-slider__thumb-container">
+          <div class="mdc-slider__pin">
+            <span class="mdc-slider__pin-value-marker"></span>
+          </div>
+          <svg class="mdc-slider__thumb" width="21" height="21">
+            <circle cx="10.5" cy="10.5" r="7.875"></circle>
+          </svg>
+          <div class="mdc-slider__focus-ring"></div>
+        </div>
+      </div>
+    </main>
+    <script src="/script.js" defer></script>
+  </body>
+</html>
