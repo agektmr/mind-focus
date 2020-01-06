@@ -1,0 +1,27 @@
+{
+  "name": "mind-focus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/script.js > src/built.script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agektmr/mind-focus.git"
+  },
+  "author": "Eiji Kitamura",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/agektmr/mind-focus/issues"
+  },
+  "homepage": "https://github.com/agektmr/mind-focus#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-private-methods": "^7.7.4",
+    "@babel/preset-env": "^7.7.7"
+  }
+}
