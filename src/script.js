@@ -63,7 +63,7 @@ class WhiteNoise {
     this.osc2.removeEventListener('audioprocess', this.audioprocess);
     this.osc2.disconnect();
   }
-  
+
   audioprocess(e) {
     let output = e.outputBuffer.getChannelData(0);
     for (let i = 0; i < this.bufferSize; i++) {
@@ -83,6 +83,8 @@ class Player {
   isPlyaing = false
 
   constructor() {
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+
     this.ctx = new AudioContext();
     this.gain = new GainNode(this.ctx);
     this.pan1 = new StereoPannerNode(this.ctx);
@@ -93,7 +95,7 @@ class Player {
     this.pan2.connect(this.gain);
     this.gain.connect(this.ctx.destination);
   }
-  
+
   start (type, vol = 0.99) {
     this.ctx.suspend();
     delete this.osc;
@@ -119,14 +121,14 @@ class Player {
 
   terminate() {
     this.osc.stop();
-    this.isPlaying = false;    
+    this.isPlaying = false;
   }
-  
+
   stop() {
     this.changeVol(0.001);
     setTimeout(this.terminate.bind(this), 100);
   }
-  
+
   changeFreq(val) {
     if (this.type === 'stereosignwave') {
       this.frequency = val;
@@ -148,7 +150,7 @@ const toggle = () => {
   }
 }
 
-const start = () => { 
+const start = () => {
   toggleBtn.innerText = 'Stop';
   player.start(select.value, parseFloat(volSlider.value) / 100);
   player.changeFreq(parseFloat(freqSlider.value));
