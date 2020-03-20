@@ -1,9 +1,13 @@
+import { MDCSelect } from '@material/select';
+import { MDCSlider } from '@material/slider';
+import { MDCRipple } from '@material/ripple';
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
 
-const buttonRipple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-button'));
-// const iconButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-icon-button'));
+const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+// const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 // iconButtonRipple.unbounded = true;
 
 class StereoSignWave {
@@ -193,7 +197,7 @@ let player = new Player();
 const toggleBtn = document.querySelector('#toggle');
 toggleBtn.addEventListener('click', toggle);
 
-const select = new mdc.select.MDCSelect(document.querySelector('#select'));
+const select = new MDCSelect(document.querySelector('#select'));
 select.listen('MDCSelect:change', e => {
   if (player.isPlaying) {
     restart();
@@ -206,12 +210,12 @@ select.listen('MDCSelect:change', e => {
 })
 
 const freq = document.querySelector('#freq');
-const freqSlider = new mdc.slider.MDCSlider(freq);
+const freqSlider = new MDCSlider(freq);
 freqSlider.listen('MDCSlider:input', e => {
   player.changeFreq(parseFloat(freqSlider.value));
 });
 
-const volSlider = new mdc.slider.MDCSlider(document.querySelector('#volume'));
+const volSlider = new MDCSlider(document.querySelector('#volume'));
 volSlider.listen('MDCSlider:input', e => {
   player.changeVol(parseFloat(volSlider.value) / 100);
 });
