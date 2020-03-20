@@ -1,19 +1,22 @@
 import { MDCSelect } from '@material/select';
 import { MDCSlider } from '@material/slider';
+import StereoPannerNode from 'stereo-panner-node';
 import { Player } from './player';
-const StereoPannerNode = require('stereo-panner-node');
-
-// @ts-ignore
-window.AudioContext = window.AudioContext||window.webkitAudioContext;
-StereoPannerNode.polyfill();
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
 
-let player = new Player();
+let player: Player;
 
-const toggle = () => player.isPlaying ? stop() : start();
+// @ts-ignore
+window.AudioContext = window.AudioContext||window.webkitAudioContext;
+StereoPannerNode.polyfill();
+
+const toggle = () => {
+  if (!player) player = new Player();
+  player.isPlaying ? stop() : start();
+}
 const toggleBtn: HTMLElement = document.querySelector('#toggle');
 toggleBtn.addEventListener('click', toggle);
 

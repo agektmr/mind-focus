@@ -4,11 +4,11 @@
   "display": "standalone",
   "start_url": "/?pwa",
   "icons": [{
-    "src": "https://cdn.glitch.com/224df7d9-a721-424b-b4d8-bf99d489a47e%2Fmind-focus-192x192.png?v=1572247372999",
+    "src": "images/icon-192x192.png",
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/224df7d9-a721-424b-b4d8-bf99d489a47e%2Fmind-focus-512x512.png?v=1572247373346",
+    "src": "images/icon-512x512.png",
     "sizes": "512x512",
     "type": "image/png"
   }]

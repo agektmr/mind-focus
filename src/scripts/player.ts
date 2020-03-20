@@ -7,9 +7,9 @@ export class Player {
   private pan1: StereoPannerNode
   private pan2: StereoPannerNode
   private gain: GainNode
-  public type: string
-  public frequency: number = 144
-  public volume: number = 0.99
+  private type: string
+  private frequency: number = 144
+  private volume: number = 0.99
   public isPlaying: boolean = false
 
   constructor() {
