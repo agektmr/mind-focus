@@ -13,36 +13,33 @@ module.exports = [{
     filename: path.join('scripts', 'style-bundle.js')
   },
   module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: path.join('styles', 'bundle.css')
-            }
-          },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          {
-            loader: 'sass-loader',
-            options: {
-              implementation: require('sass'),
-              sassOptions: {
-                includePaths: ['./node_modules']
-              }
+    rules: [{
+      test: /\.scss$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: path.join('styles', 'bundle.css')
+          }
+        },
+        { loader: 'extract-loader' },
+        { loader: 'css-loader' },
+        {
+          loader: 'sass-loader',
+          options: {
+            implementation: require('sass'),
+            sassOptions: {
+              includePaths: ['./node_modules']
             }
           }
-        ]
-      }
-    ]
+        }
+      ]
+    }]
   }
 }, {
   mode: 'production',
   entry: {
-    'scripts/bundle': path.join(src, 'scripts', 'main.ts'),
-    // 'sw': path.join(src, 'sw.ts')
+    'scripts/bundle': path.join(src, 'scripts', 'main.ts')
   },
   output: {
     path: dst,
@@ -65,9 +62,6 @@ module.exports = [{
     }, {
       from: path.join(src, 'manifest.json'),
       to: path.join(dst, 'manifest.json')
-    }, {
-      from: path.join(src, 'sw.js'),
-      to: path.join(dst, 'sw.js')
     }, {
       from: path.join(src, 'images'),
       to: path.join(dst, 'images')
