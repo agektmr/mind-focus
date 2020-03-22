@@ -1,5 +1,5 @@
 # Mind Focus
-Generates weird sound that prevents you from distraction and focus on your work.
+Generates weird sound that prevents you from distraction and allows you to focus on your work.
 
 ## Install
 ```shell
