@@ -63,7 +63,7 @@ export class Player {
   public changeFreq(val: number): void {
     if (this.type === 'stereosignwave') {
       this.frequency = val;
-      (<StereoSignWave>this.osc).changeFreq(val);
+      (<StereoSignWave>this.osc).changeFreq(this.frequency);
     }
   }
 

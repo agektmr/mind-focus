@@ -9,8 +9,8 @@ export class WhiteNoise {
   }
 
   public start(): void {
-    this.osc1.addEventListener('audioprocess', this.audioprocess);
-    this.osc2.addEventListener('audioprocess', this.audioprocess);
+    this.osc1.addEventListener('audioprocess', this.audioprocess.bind(this));
+    this.osc2.addEventListener('audioprocess', this.audioprocess.bind(this));
   }
 
   public connect(
@@ -22,13 +22,13 @@ export class WhiteNoise {
   }
 
   public stop(): void {
-    this.osc1.removeEventListener('audioprocess', this.audioprocess);
+    this.osc1.removeEventListener('audioprocess', this.audioprocess.bind(this));
     this.osc1.disconnect();
-    this.osc2.removeEventListener('audioprocess', this.audioprocess);
+    this.osc2.removeEventListener('audioprocess', this.audioprocess.bind(this));
     this.osc2.disconnect();
   }
 
-  public audioprocess(e: AudioProcessingEvent): void {
+  private audioprocess(e: AudioProcessingEvent): void {
     let output = e.outputBuffer.getChannelData(0);
     for (let i = 0; i < this.bufferSize; i++) {
       output[i] = Math.random() * 2 - 1;

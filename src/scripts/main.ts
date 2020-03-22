@@ -22,7 +22,7 @@ toggleBtn.addEventListener('click', toggle);
 
 const select = new MDCSelect(document.querySelector('#select'));
 select.listen('MDCSelect:change', e => {
-  if (player.isPlaying) restart();
+  if (player?.isPlaying) restart();
   freq.style.display = select.value === 'stereosignwave' ? 'block' : 'none';
 })
 
