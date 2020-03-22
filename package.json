@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
-    "build": "rimraf dist && webpack",
+    "build": "rimraf dist && webpack --mode development",
+    "build:prod": "rimraf dist && webpack --mode production",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
