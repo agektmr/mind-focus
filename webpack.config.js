@@ -9,14 +9,20 @@ module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production';
   return [{
     mode: PRODUCTION ? 'production' : 'development',
-    entry: path.join(src, 'styles', 'style.scss'),
+    entry: {
+      'scripts/bundle': path.join(src, 'scripts', 'main.ts'),
+      'scripts/style-bundle': path.join(src, 'styles', 'style.scss'),
+    },
     output: {
       path: dst,
-      filename: path.join('scripts', 'style-bundle.js')
+      filename: '[name].js'
     },
-    devtool: !PRODUCTION ? 'inline-source-map' : false,
     module: {
       rules: [{
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      }, {
         test: /\.scss$/,
         use: [
           {
@@ -37,22 +43,6 @@ module.exports = (env, argv) => {
             }
           }
         ]
-      }]
-    }
-  }, {
-    mode: PRODUCTION ? 'production' : 'development',
-    entry: {
-      'scripts/bundle': path.join(src, 'scripts', 'main.ts')
-    },
-    output: {
-      path: dst,
-      filename: '[name].js'
-    },
-    module: {
-      rules: [{
-        test: /\.ts$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
       }]
     },
     resolve: {
