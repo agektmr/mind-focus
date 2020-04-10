@@ -15,18 +15,33 @@ body {
 
 main {
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .slider_container {
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-}
-
-.slider_container *:first-child {
-  padding-right: 10px;
-}
-
-.slider_container *:last-child {
-  padding-left: 10px;
+  width: 100%;
+  mwc-icon:first-child {
+    padding-right: 10px;
+    flex: 0 1 auto;
+  }
+  mwc-slider {
+    flex: 1 1 auto;
+  }
+  mwc-icon:last-child {
+    padding-left: 10px;
+    flex: 0 1 auto;
+  }
 }

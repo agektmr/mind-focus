@@ -1,5 +1,3 @@
-import { MDCSelect } from '@material/select';
-import { MDCSlider } from '@material/slider';
 import StereoPannerNode from 'stereo-panner-node';
 import { Player } from './player';
 
@@ -17,24 +15,25 @@ const toggle = () => {
   if (!player) player = new Player();
   player.isPlaying ? stop() : start();
 }
-const toggleBtn: HTMLElement = document.querySelector('#toggle');
+const toggleBtn: any = document.querySelector('#toggle');
 toggleBtn.addEventListener('click', toggle);
 
-const select = new MDCSelect(document.querySelector('#select'));
-select.listen('MDCSelect:change', e => {
+const select: any = document.querySelector('#select');
+select.addEventListener('change', e => {
   if (player?.isPlaying) restart();
-  freq.style.display = select.value === 'stereosignwave' ? 'block' : 'none';
+  freqSlider.style.display = select.value === 'stereosignwave' ? 'block' : 'none';
 })
 
-const freq: HTMLElement = document.querySelector('#freq');
-const freqSlider = new MDCSlider(freq);
-freqSlider.listen('MDCSlider:input', e => {
-  player.changeFreq(freqSlider.value);
+const freqSlider: any = document.querySelector('#frequency');
+freqSlider.addEventListener('change', e => {
+  if (player?.isPlaying)
+    player.changeFreq(freqSlider.value);
 });
 
-const volSlider = new MDCSlider(document.querySelector('#volume'));
-volSlider.listen('MDCSlider:input', e => {
-  player.changeVol(volSlider.value / 100);
+const volSlider: any = document.querySelector('#volume');
+volSlider.addEventListener('change', e => {
+  if (player?.isPlaying)
+    player.changeVol(volSlider.value / 100);
 });
 
 document.addEventListener('keydown', e => {

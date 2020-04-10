@@ -9,8 +9,10 @@ module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production';
   return [{
     mode: PRODUCTION ? 'production' : 'development',
+    devtool: PRODUCTION ? '' : 'source-map',
     entry: {
-      'scripts/bundle': path.join(src, 'scripts', 'main.ts'),
+      'scripts/bundle': path.join(src, 'scripts', 'bundle.ts'),
+      'scripts/main': path.join(src, 'scripts', 'main.ts'),
       'scripts/style-bundle': path.join(src, 'styles', 'style.scss'),
     },
     output: {

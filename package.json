@@ -43,6 +43,12 @@
     "workbox-webpack-plugin": "^5.1.1"
   },
   "dependencies": {
+    "@material/mwc-button": "^0.14.1",
+    "@material/mwc-icon": "^0.14.1",
+    "@material/mwc-list": "^0.14.1",
+    "@material/mwc-select": "^0.14.1",
+    "@material/mwc-slider": "^0.14.1",
+    "@material/mwc-snackbar": "^0.14.1",
     "material-components-web": "^5.1.0",
     "stereo-panner-node": "^1.4.0"
   }
