@@ -56,6 +56,9 @@ module.exports = (env, argv) => {
         from: path.join(src, 'manifest.json'),
         to: path.join(dst, 'manifest.json')
       }, {
+        from: path.join(src, '.well-known'),
+        to: path.join(dst, '.well-known')
+      }, {
         from: path.join(src, 'images'),
         to: path.join(dst, 'images')
       }]),
