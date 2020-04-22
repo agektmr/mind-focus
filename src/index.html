@@ -48,9 +48,6 @@
           </ul>
         </div>
       </div>
-      <button id="toggle" class="mdc-button mdc-button--raised">
-        Start
-      </button>
       <div class="slider_container">
         <div id="freq" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
         aria-valuemin="144" aria-valuemax="148" aria-valuenow="146"
@@ -70,6 +67,10 @@
         </div>
       </div>
     </main>
+    <button id="toggle" class="mdc-fab" aria-label="Play">
+      <div class="mdc-fab__ripple"></div>
+      <span id="toggle_icon" class="mdc-fab__icon material-icons">play_arrow</span>
+    </button>
     <script src="/scripts/bundle.js"></script>
   </body>
 </html>

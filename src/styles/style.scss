@@ -1,3 +1,9 @@
+@use '@material/theme' with (
+  $primary: #E56700,
+  $secondary: #FAC97F,
+  $on-primary: #FFFFFF,
+  $on-secondary: #000000
+);
 @use '@material/slider/mdc-slider';
 @use '@material/select/mdc-select';
 @use '@material/button/mdc-button';
@@ -5,6 +11,7 @@
 @use '@material/menu/mdc-menu';
 @use '@material/menu-surface/mdc-menu-surface';
 @use '@material/line-ripple/mdc-line-ripple';
+@use '@material/fab/mdc-fab';
 
 body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
@@ -37,4 +44,10 @@ main {
 
 .slider {
   width: 100%;
+}
+
+#toggle {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
 }

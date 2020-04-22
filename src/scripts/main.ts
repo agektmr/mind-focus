@@ -1,9 +1,12 @@
 import { MDCSelect } from '@material/select';
 import { MDCSlider } from '@material/slider';
+import { MDCRipple } from '@material/ripple';
 import StereoPannerNode from 'stereo-panner-node';
 import { Player } from './player';
 
 const toggleBtn: HTMLElement = document.querySelector('#toggle');
+new MDCRipple(toggleBtn);
+const toggleIcon: HTMLElement = document.querySelector('#toggle_icon');
 const select = new MDCSelect(document.querySelector('#select'));
 const freq: HTMLElement = document.querySelector('#freq');
 const freqSlider = new MDCSlider(freq);
@@ -47,7 +50,7 @@ document.addEventListener('keydown', e => {
 });
 
 const start = () => {
-  toggleBtn.innerText = 'Stop';
+  toggleIcon.innerText = 'pause';
   player.start(select.value, volSlider.value / 100);
   player.changeFreq(freqSlider.value);
 }
@@ -57,11 +60,11 @@ const restart = () => {
   player.changeFreq(freqSlider.value);
 }
 const pause = () => {
-  toggleBtn.innerText = 'Start';
+  toggleIcon.innerText = 'play_arrow';
   player.stop();
 }
 const stop = () => {
-  toggleBtn.innerText = 'Start';
+  toggleIcon.innerText = 'play_arrow';
   player.stop();
 }
 
