@@ -14,20 +14,22 @@
       <h1>Mind Focus</h1>
       <div class="slider_container">
         <i class="mdc-fab__icon material-icons">volume_down</i>
-        <div id="volume" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
-         aria-valuemin="0" aria-valuemax="100" aria-valuenow="99"
-         aria-label="Select Value">
-          <div class="mdc-slider__track-container">
-            <div class="mdc-slider__track"></div>
-          </div>
-          <div class="mdc-slider__thumb-container">
-            <div class="mdc-slider__pin">
-              <span class="mdc-slider__pin-value-marker"></span>
+        <div class="slider">
+          <div id="volume" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="99"
+          aria-label="Select Value">
+            <div class="mdc-slider__track-container">
+              <div class="mdc-slider__track"></div>
             </div>
-            <svg class="mdc-slider__thumb" width="21" height="21">
-              <circle cx="10.5" cy="10.5" r="7.875"></circle>
-            </svg>
-            <div class="mdc-slider__focus-ring"></div>
+            <div class="mdc-slider__thumb-container">
+              <div class="mdc-slider__pin">
+                <span class="mdc-slider__pin-value-marker"></span>
+              </div>
+              <svg class="mdc-slider__thumb" width="21" height="21">
+                <circle cx="10.5" cy="10.5" r="7.875"></circle>
+              </svg>
+              <div class="mdc-slider__focus-ring"></div>
+            </div>
           </div>
         </div>
         <i class="mdc-fab__icon material-icons">volume_up</i>
@@ -49,20 +51,22 @@
       <button id="toggle" class="mdc-button mdc-button--raised">
         Start
       </button>
-      <div id="freq" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
-       aria-valuemin="144" aria-valuemax="148" aria-valuenow="146"
-       aria-label="Select Value">
-        <div class="mdc-slider__track-container">
-          <div class="mdc-slider__track"></div>
-        </div>
-        <div class="mdc-slider__thumb-container">
-          <div class="mdc-slider__pin">
-            <span class="mdc-slider__pin-value-marker"></span>
+      <div class="slider_container">
+        <div id="freq" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+        aria-valuemin="144" aria-valuemax="148" aria-valuenow="146"
+        aria-label="Select Value">
+          <div class="mdc-slider__track-container">
+            <div class="mdc-slider__track"></div>
           </div>
-          <svg class="mdc-slider__thumb" width="21" height="21">
-            <circle cx="10.5" cy="10.5" r="7.875"></circle>
-          </svg>
-          <div class="mdc-slider__focus-ring"></div>
+          <div class="mdc-slider__thumb-container">
+            <div class="mdc-slider__pin">
+              <span class="mdc-slider__pin-value-marker"></span>
+            </div>
+            <svg class="mdc-slider__thumb" width="21" height="21">
+              <circle cx="10.5" cy="10.5" r="7.875"></circle>
+            </svg>
+            <div class="mdc-slider__focus-ring"></div>
+          </div>
         </div>
       </div>
     </main>

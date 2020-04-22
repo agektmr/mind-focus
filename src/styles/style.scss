@@ -19,7 +19,7 @@ main {
   flex-direction: column;
   align-items: center;
   > * {
-    padding: 5px 0;
+    margin: 5px 0;
   }
 }
 
@@ -27,12 +27,14 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
+  i:first-child {
+    margin-right: 10px;
+  }
+  i:last-child {
+    margin-left: 10px;
+  }
 }
 
-.slider_container *:first-child {
-  padding-right: 10px;
-}
-
-.slider_container *:last-child {
-  padding-left: 10px;
+.slider {
+  width: 100%;
 }
