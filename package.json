@@ -43,7 +43,7 @@
     "workbox-webpack-plugin": "^5.1.1"
   },
   "dependencies": {
-    "material-components-web": "^5.1.0",
+    "material-components-web": "^6.0.0",
     "stereo-panner-node": "^1.4.0"
   }
 }

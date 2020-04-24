@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/styles/bundle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
     <main>
@@ -34,14 +34,19 @@
         </div>
         <i class="mdc-fab__icon material-icons">volume_up</i>
       </div>
-      <div id="select" class="mdc-select">
-        <div class="mdc-select__anchor">
+      <div id="select" class="mdc-select mdc-select--outlined">
+        <div class="mdc-select__anchor" aria-labelledby="outlined-select-label">
+          <input type="text" disabled readonly id="demo-selected-text" class="mdc-select__selected-text">
           <i class="mdc-select__dropdown-icon"></i>
-          <div class="mdc-select__selected-text"></div>
-          <span class="mdc-floating-label">Select noise</span>
-          <div class="mdc-line-ripple"></div>
+          <span class="mdc-notched-outline">
+            <span class="mdc-notched-outline__leading"></span>
+            <span class="mdc-notched-outline__notch">
+              <span id="outlined-select-label" class="mdc-floating-label">Select noise</span>
+            </span>
+            <span class="mdc-notched-outline__trailing"></span>
+          </span>
         </div>
-        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="list-box">
+        <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
           <ul class="mdc-list">
             <li class="mdc-list-item mdc-list-item--selected" data-value="stereosignwave" aria-selected="true">Stereo Sign Wave</li>
             <li class="mdc-list-item" data-value="whitenoise">White Noise</li>
