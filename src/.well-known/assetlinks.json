@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.agektmr.mindfocus",
+    "sha256_cert_fingerprints":
+    ["E0:85:F7:CA:92:3C:57:90:A1:F9:2E:6A:E5:86:77:4A:56:1E:5D:A9:F3:B3:58:2D:72:2B:69:3F:4C:A8:89:ED"]
+  }
+}]
