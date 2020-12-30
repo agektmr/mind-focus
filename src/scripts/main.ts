@@ -2,6 +2,8 @@
 import { Player } from './player';
 
 const toggleBtn: HTMLElement = document.querySelector('#toggle');
+new MDCRipple(toggleBtn);
+const toggleIcon: HTMLElement = document.querySelector('#toggle_icon');
 const select = new MDCSelect(document.querySelector('#select'));
 const freq: HTMLElement = document.querySelector('#freq');
 const freqSlider = new MDCSlider(freq);
