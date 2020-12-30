@@ -1,11 +1,3 @@
-@use '@material/slider/mdc-slider';
-@use '@material/select/mdc-select';
-@use '@material/button/mdc-button';
-@use '@material/list/mdc-list';
-@use '@material/menu/mdc-menu';
-@use '@material/menu-surface/mdc-menu-surface';
-@use '@material/line-ripple/mdc-line-ripple';
-
 body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   display: flex;
@@ -26,6 +18,12 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+mwc-fab {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
 }
 
 .slider_container {

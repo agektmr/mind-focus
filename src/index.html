@@ -17,7 +17,6 @@
         <mwc-icon>volume_down</mwc-icon>
         <mwc-slider
           id="volume"
-          markers
           min="0"
           max="100"
           value="99"></mwc-slider>
@@ -31,13 +30,9 @@
           White Noise
         </mwc-list-item>
       </mwc-select>
-      <div class="buttons">
-        <mwc-button id="toggle" raised>Start</mwc-button>
-      </div>
       <div class="slider_container">
         <mwc-slider
           id="frequency"
-          markers
           pin
           step="0.1"
           max="148"
@@ -45,6 +40,7 @@
           value="146"></mwc-slider>
       </div>
     </main>
+    <mwc-fab id="toggle" icon="play_arrow"></mwc-fab>
     <script src="/scripts/main.js"></script>
   </body>
 </html>
