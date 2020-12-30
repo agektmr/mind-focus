@@ -19,6 +19,12 @@ main {
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  i:first-child {
+    margin-right: 10px;
+  }
+  i:last-child {
+    margin-left: 10px;
+  }
 }
 
 mwc-fab {
