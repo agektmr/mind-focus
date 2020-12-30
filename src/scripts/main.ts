@@ -1,4 +1,4 @@
-import StereoPannerNode from 'stereo-panner-node';
+// import StereoPannerNode from 'stereo-panner-node';
 import { Player } from './player';
 
 if ('serviceWorker' in navigator) {
@@ -9,7 +9,7 @@ let player: Player;
 
 // @ts-ignore
 window.AudioContext = window.AudioContext||window.webkitAudioContext;
-StereoPannerNode.polyfill();
+// StereoPannerNode.polyfill();
 
 const toggle = () => {
   if (!player) player = new Player();
@@ -45,7 +45,7 @@ document.addEventListener('keydown', e => {
 });
 
 const start = () => {
-  toggleBtn.innerText = 'Stop';
+  toggleBtn.icon = 'pause';
   player.start(select.value, volSlider.value / 100);
   player.changeFreq(freqSlider.value);
 }
@@ -55,11 +55,11 @@ const restart = () => {
   player.changeFreq(freqSlider.value);
 }
 const pause = () => {
-  toggleBtn.innerText = 'Start';
+  toggleBtn.icon = 'play_arrow';
   player.stop();
 }
 const stop = () => {
-  toggleBtn.innerText = 'Start';
+  toggleBtn.icon = 'play_arrow';
   player.stop();
 }
 

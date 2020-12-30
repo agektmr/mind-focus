@@ -4,8 +4,8 @@ import { WhiteNoise } from './white-noise';
 export class Player {
   private ctx: AudioContext
   private osc: WhiteNoise|StereoSignWave
-  private pan1: StereoPannerNode
-  private pan2: StereoPannerNode
+  private pan1: PannerNode
+  private pan2: PannerNode
   private gain: GainNode
   private type: string
   private frequency: number = 144
@@ -15,11 +15,15 @@ export class Player {
   constructor() {
     this.ctx = new AudioContext();
     this.gain = this.ctx.createGain();
-    this.pan1 = this.ctx.createStereoPanner();
-    this.pan1.pan.value = -1;
+    this.pan1 = this.ctx.createPanner();
+    this.pan1.panningModel = 'equalpower';
+    this.pan1.setPosition(0, 1, 0);
+    // this.pan1.pan.value = -1;
     this.pan1.connect(this.gain);
-    this.pan2 = this.ctx.createStereoPanner();
-    this.pan2.pan.value = 1;
+    this.pan2 = this.ctx.createPanner();
+    this.pan2.panningModel = 'equalpower';
+    this.pan2.setPosition(1, 0, 0);
+    // this.pan2.pan.value = 1;
     this.pan2.connect(this.gain);
     this.gain.connect(this.ctx.destination);
   }
