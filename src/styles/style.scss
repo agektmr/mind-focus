@@ -1,3 +1,10 @@
+html {
+  --mdc-theme-primary: #E56700;
+  --mdc-theme-secondary: #FAC97F;
+  --mdc-theme-on-primary: #FFFFFF;
+  --mdc-theme-on-secondary: #000000;
+}
+
 body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
   display: flex;

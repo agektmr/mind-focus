@@ -1,6 +1,6 @@
 {
   "name": "mind-focus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.html",
   "scripts": {
@@ -49,8 +49,6 @@
     "@material/mwc-list": "^0.20.0",
     "@material/mwc-select": "^0.20.0",
     "@material/mwc-slider": "^0.20.0",
-    "@material/mwc-snackbar": "^0.20.0",
-    "material-components-web": "^5.1.0",
-    "stereo-panner-node": "^1.4.0"
+    "@material/mwc-snackbar": "^0.20.0"
   }
 }

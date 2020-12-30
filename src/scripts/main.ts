@@ -1,14 +1,6 @@
 // import StereoPannerNode from 'stereo-panner-node';
 import { Player } from './player';
 
-const toggleBtn: HTMLElement = document.querySelector('#toggle');
-new MDCRipple(toggleBtn);
-const toggleIcon: HTMLElement = document.querySelector('#toggle_icon');
-const select = new MDCSelect(document.querySelector('#select'));
-const freq: HTMLElement = document.querySelector('#freq');
-const freqSlider = new MDCSlider(freq);
-const volSlider = new MDCSlider(document.querySelector('#volume'));
-
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
