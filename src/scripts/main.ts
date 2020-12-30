@@ -21,7 +21,7 @@ toggleBtn.addEventListener('click', toggle);
 const select: any = document.querySelector('#select');
 select.addEventListener('change', e => {
   if (player?.isPlaying) restart();
-  freqSlider.style.display = select.value === 'stereosignwave' ? 'block' : 'none';
+  freqSlider.style.display = select.value === 'stereosinewave' ? 'block' : 'none';
 })
 
 const freqSlider: any = document.querySelector('#frequency');

@@ -1,4 +1,4 @@
-export class StereoSignWave {
+export class StereoSineWave {
   private osc1: OscillatorNode
   private osc2: OscillatorNode
 

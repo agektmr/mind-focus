@@ -1,9 +1,9 @@
-import { StereoSignWave } from './stereo-sign-wave';
+import { StereoSineWave } from './stereo-sine-wave';
 import { WhiteNoise } from './white-noise';
 
 export class Player {
   private ctx: AudioContext
-  private osc: WhiteNoise|StereoSignWave
+  private osc: WhiteNoise|StereoSineWave
   private pan1: PannerNode
   private pan2: PannerNode
   private gain: GainNode
@@ -15,15 +15,14 @@ export class Player {
   constructor() {
     this.ctx = new AudioContext();
     this.gain = this.ctx.createGain();
+    // Use PannerNode instead of StereoPannerNode for Safari compatibility
     this.pan1 = this.ctx.createPanner();
     this.pan1.panningModel = 'equalpower';
-    this.pan1.setPosition(0, 1, 0);
-    // this.pan1.pan.value = -1;
+    this.pan1.setPosition(-1, 0, 0);
     this.pan1.connect(this.gain);
     this.pan2 = this.ctx.createPanner();
     this.pan2.panningModel = 'equalpower';
     this.pan2.setPosition(1, 0, 0);
-    // this.pan2.pan.value = 1;
     this.pan2.connect(this.gain);
     this.gain.connect(this.ctx.destination);
   }
@@ -32,7 +31,7 @@ export class Player {
     type: string,
     vol: number = 0.99
   ): void {
-    this.ctx.suspend();
+    // this.ctx.suspend();
     delete this.osc;
     switch (type) {
       case 'whitenoise':
@@ -40,10 +39,10 @@ export class Player {
         break;
       case 'pinknoise':
         break;
-      case 'stereosignwave':
+      case 'stereosinewave':
       default:
-        type = 'stereosignwave';
-        this.osc = new StereoSignWave(this.ctx);
+        type = 'stereosinewave';
+        this.osc = new StereoSineWave(this.ctx);
     }
     this.type = type;
     this.osc.connect(this.pan1, this.pan2);
@@ -65,9 +64,9 @@ export class Player {
   }
 
   public changeFreq(val: number): void {
-    if (this.type === 'stereosignwave') {
+    if (this.type === 'stereosinewave') {
       this.frequency = val;
-      (<StereoSignWave>this.osc).changeFreq(this.frequency);
+      (<StereoSineWave>this.osc).changeFreq(this.frequency);
     }
   }
 
