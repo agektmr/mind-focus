@@ -43,12 +43,12 @@
     "workbox-webpack-plugin": "^5.1.4"
   },
   "dependencies": {
-    "@material/mwc-button": "^0.20.0",
-    "@material/mwc-fab": "^0.20.0",
-    "@material/mwc-icon": "^0.20.0",
-    "@material/mwc-list": "^0.20.0",
-    "@material/mwc-select": "^0.20.0",
-    "@material/mwc-slider": "^0.20.0",
-    "@material/mwc-snackbar": "^0.20.0"
+    "@material/mwc-button": "^0.21.0",
+    "@material/mwc-fab": "^0.21.0",
+    "@material/mwc-icon": "^0.21.0",
+    "@material/mwc-list": "^0.21.0",
+    "@material/mwc-select": "^0.21.0",
+    "@material/mwc-slider": "^0.21.0",
+    "@material/mwc-snackbar": "^0.21.0"
   }
 }
