@@ -32,7 +32,7 @@
     "file-loader": "^6.2.0",
     "path": "^0.12.7",
     "rimraf": "^3.0.2",
-    "sass": "^1.41.1",
+    "sass": "^1.42.0",
     "sass-loader": "^8.0.2",
     "ts-loader": "^6.2.2",
     "typescript": "^3.9.10",
@@ -43,12 +43,12 @@
     "workbox-webpack-plugin": "^5.1.4"
   },
   "dependencies": {
-    "@material/mwc-button": "^0.23.0",
-    "@material/mwc-fab": "^0.23.0",
-    "@material/mwc-icon": "^0.23.0",
-    "@material/mwc-list": "^0.23.0",
-    "@material/mwc-select": "^0.23.0",
-    "@material/mwc-slider": "^0.23.0",
-    "@material/mwc-snackbar": "^0.23.0"
+    "@material/mwc-button": "^0.25.1",
+    "@material/mwc-fab": "^0.25.1",
+    "@material/mwc-icon": "^0.25.1",
+    "@material/mwc-list": "^0.25.1",
+    "@material/mwc-select": "^0.25.1",
+    "@material/mwc-slider": "^0.25.1",
+    "@material/mwc-snackbar": "^0.25.1"
   }
 }
