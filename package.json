@@ -39,7 +39,7 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.3",
-    "workbox-cli": "^5.1.4",
+    "workbox-cli": "^6.5.4",
     "workbox-webpack-plugin": "^5.1.4"
   },
   "dependencies": {
